@@ -44,8 +44,27 @@ public class Main {
                     break;
 
                 case 4:
+                    double total = 0;
+
+                    for(Product pr : cart.items) {
+                        total += pr.price;
+                    }
+
+                    if(total == 0) {
+                        System.out.println("Cart is empty!");
+                        break;
+                    }
+
+                    System.out.println("Total Amount: ₹" + total);
+
+                    // ✅ PAYMENT ADDED HERE
+                    Payment payment = new Payment();
+                    payment.processPayment(total);
+
+                    // ✅ THEN PLACE ORDER
                     Order order = new Order(user, cart);
                     order.placeOrder();
+
                     break;
 
                 case 5:
