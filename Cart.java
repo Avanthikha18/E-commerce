@@ -25,8 +25,7 @@ class Cart {
         }
         System.out.println("Total: ₹" + total);
     }
-}
-void removeFromCart(int pid) {
+    void removeFromCart(int pid) {
     for(Product p : items) {
         if(p.pid == pid) {
             items.remove(p);
@@ -34,4 +33,5 @@ void removeFromCart(int pid) {
             return;
         }
     }
+}
 }
